@@ -1,0 +1,261 @@
+@font-face {
+    font-family: hight-school;
+    src: url(import/High-School.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    /*background-image: url("import/plage.jpg");*/
+    /*background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;*/
+    /*overflow: ;*/
+    overflow: hidden;
+}
+
+header {
+    height: 70px;
+    background: rgb(164,249,255);
+    background: -moz-linear-gradient(0deg, rgba(164,249,255,1) 28%, rgba(65,94,208,1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(164,249,255,1) 28%, rgba(65,94,208,1) 100%);
+    background: linear-gradient(0deg, rgba(164,249,255,1) 20%, rgba(65,94,208,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a4f9ff",endColorstr="#415ed0",GradientType=1);
+}
+
+nav {
+    width: 60%;
+    height: 70px;
+    margin: auto;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    height: 70px;
+    font-family: fantasy;
+    font-size: 22px;
+}
+
+main {
+    background-image: url("import/plage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*height: 100vh;*/
+    overflow: auto;
+}
+
+li a {
+    color: oldlace;
+    text-decoration: none;
+}
+
+/******************** index.php ***************************/
+
+.display_container {
+    width: 75%;
+    height: 126px;
+    background-color: rgba(220, 220, 220, 0.316);
+    text-align: center;
+    padding-top: 10px;
+    margin: auto;
+    margin-top: 13%;
+    border-radius: 4px;
+}
+
+.display_container h1 {
+    color: #409b13;
+    font-size: 75px;
+    font-family: hight-school;
+    padding-top: 29px;
+}
+
+/*****************inscription ****************************/
+
+.container-form {
+    max-width: 530px;
+    margin: auto;
+    max-width: 530px;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    padding: 28px;
+    border: 1px solid black;
+    border-radius: 13px;
+    box-shadow: 0px 0px 14px 0px;
+    background-color: #ffffff73;
+    font-family: monospace;
+}
+
+table {
+    width: 460px;
+    margin: auto;
+    margin-top: 6%;
+}
+
+.container-admin {
+    max-width: 530px;
+    margin: auto;
+    max-width: 530px;
+    margin: auto;
+    margin-top: 8%;
+    margin-bottom: 4%;
+    padding: 28px;
+    border: 1px solid black;
+    border-radius: 13px;
+    box-shadow: 0px 0px 14px 0px;
+    background-color: #ffffff96;
+    font-family: monospace;
+}
+
+.container-home {
+    max-width: 530px;
+    margin: auto;
+    max-width: 530px;
+    margin: auto;
+    margin-top: 8%;
+    margin-bottom: 4%;
+    padding: 28px;
+    border: 1px solid black;
+    border-radius: 13px;
+    box-shadow: 0px 0px 14px 0px;
+}
+
+
+.container-form h1, label, .container-home h1{
+    color: white;
+    text-shadow: 1px 1px red;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    margin-right: 0px;
+    margin-left: 0px;
+    resize: vertical;
+}
+
+.msg-error {
+    color: red;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.space-bottom-connect {
+    margin-bottom: 165px;
+}
+
+/****************profil.php***************************/
+
+.container_profil {
+    width: 80%;
+    margin: auto;
+    padding-top: 40px;
+    font-family: monospace;
+}
+
+.container_profil h1 {
+    font-size: 28px;
+    color: white;
+}
+
+.form_flex {
+    display: flex;
+}
+
+.profil_title {
+    margin:  23px 0px;
+}
+
+.container-form h2 {
+    color: white;
+    text-shadow: 1px 1px red;
+    text-align: center;
+}
+
+
+/*****************livre-or.php************************/
+
+section {
+    height: 100vh;
+
+}
+
+.golden_book_title {
+    text-align: center;
+    font-family: system-ui;
+    color: gold;
+    padding: 25px 0px;
+    font-size: 53px;
+}
+
+.comment_box {
+    width: 35%;
+    /*height: 100px;*/
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    padding-bottom: 5px;
+    font-family: monospace;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.user_info_box {
+    display: flex;
+    padding: 8px;
+}
+
+.profil_picture {
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 30px;
+}
+
+.comment_display {
+    /*border: 1px solid black;*/
+    word-break: break-word;
+    margin: 10px 14px;
+}
+
+.comment_display p {
+    padding: 7px;
+}
+
+/***************footer****************/
+
+footer {
+    height: 80px;
+    width: 100%;
+    /*border: solid;*/
+    position:absolute; bottom:0;
+}
+
+footer div {
+    position: relative;
+    margin: 10px;
+}
+
+footer img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+     
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}

@@ -19,5 +19,11 @@ class comments
         $request->execute(array($comment, $_SESSION['id_user']));
         header("Location:livre-or.php");
     }
+
+    public function displayComments() {
+        $request = $this->database->prepare('SELECT `date` , `login` , `commentaire` FROM user INNER JOIN commentaires ON user.id = commentaires.id_user ORDER BY `date` DESC ');
+        $request->execute();
+        return $data = $request->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

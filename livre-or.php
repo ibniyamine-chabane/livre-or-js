@@ -1,15 +1,11 @@
 <?php 
 session_start();
 
-$database_Host = 'localhost';
-$database_User = 'root';
-$database_Pass = '';
-$database_Name = 'livreor';
+require_once("class/comments.php");
 
-$con = mysqli_connect($database_Host, $database_User, $database_Pass, $database_Name, 3307);
-$request = $con->query('SELECT `date` , `login` , `commentaire` FROM utilisateurs INNER JOIN commentaires ON utilisateurs.id = commentaires.id_utilisateur ORDER BY `date` DESC ');
-$data = $request->fetch_All();
- 
+$displayComments = new comments;
+$data = $displayComments->displayComments();
+// var_dump($data);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -27,10 +23,10 @@ $data = $request->fetch_All();
         <h1 class="golden_book_title">Livre d'or</h1>    
 
             <?php foreach ($data as $info) {
-                $dateold = $info[0];
+                $dateold = $info["date"];
                 $date = date('d-m-Y H:i:s', strtotime($dateold));
-                $pseudo = $info[1]; 
-                $comment = $info[2];   
+                $pseudo = $info['login']; 
+                $comment = $info['commentaire'];   
                 
                 echo '<div class="comment_box">
                         <div class="user_info_box">

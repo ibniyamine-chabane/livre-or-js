@@ -12,7 +12,7 @@ $message = "";
     if (isset($_POST['submit'])) {
         $comment = htmlspecialchars(trim($_POST['comment']), ENT_QUOTES);
         $send_comment = false;
-        // $userId = $_SESSION['id'];
+
 
         if (isset($comment) && !empty($comment)) {
             $send_comment = true;

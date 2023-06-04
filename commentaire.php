@@ -4,18 +4,15 @@ if (!$_SESSION['login']) {
     header("Location:livre-or.php");
 } 
 
+require_once("class/comments.php");
+$comments = new comments;
+
 $message = "";
-
-$connectDatabase = mysqli_connect("localhost", "root", "", "livreor",3307);
-$request = $connectDatabase->query('SELECT * FROM commentaires');
-$data = $request->fetch_all();
-
-    //var_dump($data);
     
     if (isset($_POST['submit'])) {
-        $comment = htmlspecialchars($_POST['comment'], ENT_QUOTES);
+        $comment = htmlspecialchars(trim($_POST['comment']), ENT_QUOTES);
         $send_comment = false;
-        $userId = $_SESSION['id'];
+        // $userId = $_SESSION['id'];
 
         if (isset($comment) && !empty($comment)) {
             $send_comment = true;
@@ -25,8 +22,7 @@ $data = $request->fetch_all();
         }
  
         if ($send_comment) {
-            $request = $connectDatabase->query("INSERT INTO commentaires(commentaire,id_utilisateur,date) VALUES ('$comment', '$userId', NOW())");
-            header("Location:livre-or.php");
+            $comments->writeComment($comment);
         }
 
     }

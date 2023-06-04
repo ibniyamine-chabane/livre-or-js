@@ -37,7 +37,6 @@ class users
             } else {    
                 $emailOk = true;
             }           
-            echo $user['login']."<br>";
         }
 
 

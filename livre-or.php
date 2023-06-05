@@ -20,8 +20,14 @@ $data = $displayComments->displayComments();
 <?php include("header.php");?>
     <main>
         <section>
-        <h1 class="golden_book_title">Livre d'or</h1>    
-
+        <h1 class="golden_book_title">Livre d'or</h1>
+        <?php if (empty($_SESSION['login'])): ?>
+            <p style="font-family: system-ui;
+                      text-align: center;
+                      color: gold;
+                      padding-bottom: 8px;
+                      font-size: 22px;">connecter vous pour laisser un commentaire</p>    
+        <?php endif; ?>
             <?php foreach ($data as $info) {
                 $dateold = $info["date"];
                 $date = date('d-m-Y H:i:s', strtotime($dateold));

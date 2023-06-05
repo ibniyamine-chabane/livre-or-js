@@ -73,13 +73,13 @@ if (isset($_POST['submit']))
                     <form action="" method="post">
                         <label for="login">login</label>
                         <input type="login" name="login" value="<?= $prefilled_login ?>" >
-                        <label for="current_password">mot de passe actuelle (valider votre mdp si vous voulez seulement modifier les infos ci dessus)</label><!-- mot de passe actuel -->
-                        <input type="password" name="current_password">
+                        <label for="current_password">mot de passe actuelle</label><!-- mot de passe actuel -->
+                        <input type="password" name="current_password" placeholder="mot de passe à valider pour toute modification">
                         <label for="new_password">nouveau mot de passe</label><!-- nouveau mot de passe -->
-                        <input type="password" name="new_password">
+                        <input type="password" name="new_password" placeholder="votre nouveau mot de passe">
                         <label for="password_confirm">confirmer mot de passe</label><!-- confirmer le nouveu mdp -->
-                        <input type="password" name="password_confirm">
-                        <input type="submit" name="submit" value="valider" class="button">
+                        <input type="password" name="password_confirm" placeholder="confirmer votre mot de passe">
+                        <input type="submit" name="submit" value="modifier" class="button">
                     </form>
                 </div>    
         </section> 

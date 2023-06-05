@@ -46,7 +46,7 @@ $message = "";
             <form class="container-form" method="post">
                 <p style="color:red"><?= $message ?></p>
                 <label for="fcomment">connecté en tant que :<?= $_SESSION['login']; ?></label>
-                <textarea name="comment" id="comment" cols="62" rows="10"></textarea>
+                <textarea name="comment" id="comment" cols="62" rows="10" placeholder="votre commentaire"></textarea>
                 <input type="submit" name="submit" value="envoyer">
             </form>
         </section>

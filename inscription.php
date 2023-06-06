@@ -18,6 +18,8 @@ if (isset($_POST['submit'])) {
             $login = htmlspecialchars(trim($_POST['login']));
             $password =  htmlspecialchars(trim($_POST['password']));
             $user->register($login, $password);
+            $message = $user->getMessage();
+
 
         }else {
             $message = "les mot de passe ne correspond pas";

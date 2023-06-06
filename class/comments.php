@@ -13,7 +13,7 @@ class comments
         }
     }
 
-    public function writeComment($comment, ) {
+    public function writeComment($comment) {
 
         $request = $this->database->prepare("INSERT INTO commentaires(commentaire,id_user,date) VALUES ((?), (?), NOW())");
         $request->execute(array($comment, $_SESSION['id_user']));

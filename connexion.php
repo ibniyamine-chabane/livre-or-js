@@ -15,8 +15,12 @@ if (isset($_POST['submit'])) {
 
     $login = $_POST['login'];
     $password = $_POST['password'];
+    if($login && $password ) {
     $user->connection($login, $password);
-
+    $message = $user->getMessage();
+    } else {
+        $message = "veuillez remplir tous les champs";
+    }
 }
  
 ?>  

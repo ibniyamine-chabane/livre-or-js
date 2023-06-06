@@ -8,47 +8,51 @@ if (empty($_SESSION['login'])){ // si l'utilisateur est déja connecté il est r
     exit;
 }
 
+
 $user = new users; 
 $userDb = $user->getProfil()[0];
 $prefilled_login = $userDb["login"];
 $current_password = $userDb["password"];
+$message = "" ;
 
 if (isset($_POST['submit'])) 
 {
     if ($_POST['login'] && $_POST['current_password']) 
     {
-        if ($_POST['current_password'] == $current_password) 
+        if (password_verify($_POST['current_password'], $current_password)) 
         {
 
             $login = htmlspecialchars(trim($_POST['login']));
             $password =  htmlspecialchars(trim($_POST['current_password']));
-            $user->updateProfil($login, $password);
-
+            $user->updateLogin($login, $password);
+            $message = $user->getMessage(); 
         } else {
-            echo "les mot de passe ne correspond pas";
+            $message = "les mot de passe ne correspond pas";
         }    
 
     } else {
-        echo "veuillez remplir tout les champs";
+        $message = "veuillez remplir tout les champs";
     } 
 
     if ($_POST['current_password'] && $_POST['new_password'] && $_POST['password_confirm']) 
     {
         
-        if($_POST['current_password'] == $current_password && $_POST['new_password'] == $_POST['password_confirm'] ) {
+        if(password_verify($_POST['current_password'], $current_password) && $_POST['new_password'] == $_POST['password_confirm'] ) {
 
             $new_password = $_POST['new_password'];
             $user->changePassword($new_password);
-            echo "le mot de passe a été modifier";
+            $message = "le mot de passe a été modifier";
 
-        } else if ($_POST['current_password'] != $current_password) {
-            echo "erreur";
-        } else if ($_POST['new_password'] != $_POST['password_confirm']) {
-            echo "les nouveau mdp et la confirmation ne sont pas identique";
+        } else {
+            $message = "erreur";
         }
+        
+        if ($_POST['new_password'] != $_POST['password_confirm']) {
+            $message = "les nouveau mdp et la confirmation ne sont pas identique";
+        } 
     }
 
-}
+} 
 
 
 ?>
@@ -65,8 +69,8 @@ if (isset($_POST['submit']))
     <?php include("header.php"); ?>
     <main>
         <section>
-            <?php if (isset($_SESSION['message_profil'])) :?>
-                <span style="text-align: center;display: block;color: green;font-weight: bold;background-color: #ffffffa3;width: 30%;margin: auto;"><?= $_SESSION['message_profil'] ?></span>
+            <?php if (isset($message)) :?>
+                <span style="text-align: center;display: block;color: green;font-weight: bold;background-color: #ffffffa3;width: 30%;margin: auto;"><?= $message ?></span>
                 <?php endif; ?>
                 <div class="container-form">
                 <h2>Profil</h2>

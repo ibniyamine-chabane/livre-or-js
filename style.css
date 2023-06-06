@@ -27,7 +27,7 @@ header {
 }
 
 nav {
-    width: 60%;
+    width: 80%;
     height: 70px;
     margin: auto;
 }
@@ -55,6 +55,10 @@ li a {
     text-decoration: none;
 }
 
+li a:hover {
+    color: gold;
+}
+
 /******************** index.php ***************************/
 
 .display_container {
@@ -66,6 +70,8 @@ li a {
     margin: auto;
     margin-top: 13%;
     border-radius: 4px;
+    padding-bottom: 30px;
+    height: auto;
 }
 
 .display_container h1 {
@@ -82,7 +88,7 @@ li a {
     margin: auto;
     max-width: 530px;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 5%;
     margin-bottom: 4%;
     padding: 28px;
     border: 1px solid black;
@@ -185,8 +191,15 @@ h1 {
     text-shadow: 1px 1px red;
     text-align: center;
 }
+/******************commentaire.php *******************/
 
+textarea {
+    width: 100%;
+}
 
+label {
+    font-size: 16px;
+}
 /*****************livre-or.php************************/
 
 section {
@@ -203,7 +216,7 @@ section {
 }
 
 .comment_box {
-    width: 35%;
+    width: 80%;
     /*height: 100px;*/
     background-color: rgb(255, 255, 255);
     border-radius: 5px;
@@ -259,3 +272,28 @@ footer img {
     display: flex;
     justify-content: center;
 }
+
+/******************* media queries ******************/
+@media only screen and (max-width: 600px) {
+    header ul {
+        font-size: 15px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    .container-form {
+        max-width: 80%;
+        margin-top: 8%;
+    }
+
+    .display_container h1 {
+        font-size: 30px;
+    }
+
+    .display_container {
+        padding-bottom: 30px;
+        height: auto;
+    }
+  }
